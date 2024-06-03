@@ -1,0 +1,439 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome page</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Jacques+Francois+Shadow&display=swap");
+    * {
+        font-family: "Nunito", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        outline: none;
+        border: none;
+        text-decoration: none;
+        text-transform: capitalize;
+        transition: all 0.2s linear;
+    } 
+    
+    html {
+        font-size: 62.5%;
+         overflow: hidden; 
+    }
+    
+    body {
+        background: #212531;
+        margin: 0;
+    }
+    
+    header {
+        margin-bottom: 0px;
+    }
+
+        a {
+        text-decoration: none;
+        color: #000;
+    }
+    
+    ul {
+        list-style: none;
+    }
+    
+/* styling the logo  */
+
+    .logo {
+        font-size: 2.5rem;
+        font-weight: bolder;
+        color: #666;
+        display: inline-block;
+    }
+    
+    .logo i {
+        padding-right: 2rem;
+        color: black;
+    }
+    
+    .order {
+        text-shadow: -1px -1px 0 yellow, 1px -1px 0 yellow, -1px 1px 0 yellow, 1px 1px yellow;
+    }
+
+/* Stying the navbar container */
+    
+    .nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        background: white;
+        color: rgb(11, 8, 8);
+        height: 65px;
+        padding: 1em;
+        font-size: 25px;
+         
+}
+    
+    body{
+        background-color: rgb(122, 102, 21);
+    }
+    
+    .menu li:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+    }
+    
+    .menu {
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        margin: 0;
+    }
+    
+    .menu>li {
+        margin: 0 1rem;
+        overflow: hidden;
+    }
+    .menu-button-container {
+        display: none;
+        height: 100%;
+        width: 30px;
+        cursor: pointer;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #menu-toggle {
+        display: none;
+    }
+    /*  Creating the menu button */
+    
+    .menu-button,
+    .menu-button::before,
+    .menu-button::after {
+        display: block;
+        background-color: rgb(13, 9, 9);
+        position: absolute;
+        height: 6px;
+        width: 32px;
+        border-radius: 3px;
+        color: white;
+    }
+    
+    .menu-button::before {
+        content: "";
+        margin-top: -8px;
+    }
+    
+    .menu-button::after {
+        content: "";
+        margin-top: 8px;
+    }
+    /*  Adding Functionality to the Hamburger Menu with CSS  */
+    
+    #menu-toggle:checked+.menu-button-container .menu-button::before {
+        margin-top: 0px;
+        transform: rotate(45deg);
+    }
+    
+    #menu-toggle:checked+.menu-button-container .menu-button {
+        background: rgba(255, 255, 255, 0);
+    }
+    
+    #menu-toggle:checked+.menu-button-container .menu-button::after {
+        margin-top: 0px;
+        /*  transforms the hamburger icon into a cross  */
+        transform: rotate(-45deg);
+    }
+    /* Styling the hero section */
+    
+    .home {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        min-height: 80vh;
+        align-items: center;
+       
+    }
+    .image img{
+
+        border-radius: 40px;
+
+    }
+    
+    .home .content {
+        flex: 1 1 40rem;
+        padding-top: 6.5rem;
+    }
+
+
+
+    /* Styling the main image */
+    
+    .home .image {
+        flex: 1 1 30rem;
+    }
+    
+    .home .image img {
+        width: 80%;
+        height: 80%;
+        padding: 1rem;
+        animation: float 3s linear infinite;  
+    }
+    /* animating the main image   */
+    
+     @keyframes float {
+        0%,
+        100% {
+            transform: translateY(0rem);
+        }
+        50% {
+            transform: translateY(3rem);
+        }
+    } 
+    
+    .home .content h3 {
+        font-size: 3rem;
+        color: white;
+    }
+    /* Styling the content */
+    
+    .yellowColor {
+        color:yellow;
+    }
+    
+    .mainfont {
+        font-family: "Jacques Francois Shadow", cursive;
+        
+       
+    }
+    
+  
+    
+    .home .content p {
+        font-size: 1.7rem;
+        color: white;
+        padding: 1rem 0;
+    }
+    
+    .heading {
+        text-align: center;
+        font-size: 3.5rem;
+        padding: 1rem;
+        color: #666;
+    }
+    /* Styling the buttons  */
+    
+    @keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+
+    /* media queries  */
+    
+    @media (max-width: 800px) {
+        html {
+            font-size: 55%;
+        }
+        header {
+            padding: 2rem;
+        }
+        section {
+            padding: 2rem;
+        }
+    }
+    
+    @media (max-width: 500px) {
+        .menu-button-container {
+            display: flex;
+        }
+        .menu {
+            position: absolute;
+            top: 0;
+            margin-top: 50px;
+            left: 0;
+            flex-direction: column;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem
+        }
+        .menu li:hover {
+            transform: scale(1);
+        }
+        #menu-toggle~.menu li {
+            height: 0;
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+        #menu-toggle:checked~.menu li {
+            border: 1px solid #9f9a9a;
+            height: 2.5em;
+            padding: 0.5em;
+        }
+        .menu>li {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0.5em 0;
+            width: 100%;
+            color: black;
+            background-color: #e8e8e8;
+        }
+        .menu>li:not(:last-child) {
+            border-bottom: 1px solid #444;
+        }
+    }
+    @media (max-width: 450px) {
+        html {
+            font-size: 50%;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            text-align: center;
+        }
+    }
+    .image {
+            position: relative;
+        }
+
+        .image .text-on-image {
+            position: absolute;
+            bottom: 10%;
+            left: 120px;
+            transform: translate(-50%, -50%);
+            font-size: 7.8rem; /* Adjust size as needed */
+            color: white; /* Change text color if necessary */
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); /* Add shadow for better visibility */
+            animation: float 3s linear infinite;  
+            color: red;
+        }
+        .logo img{
+            width: 50px;
+            height: auto;
+            border-radius: 30px;
+
+        }
+        .home h3{
+			margin-left: 100px;
+			margin-bottom: 150px;
+			
+		}
+		.home a{
+			
+			margin-left: 100px;
+			margin-bottom: 100px;
+		}
+		.fas fa-utensils{
+			
+				margin-bottom: 200px;
+			
+		}
+		/* Button styling */
+.btn {
+    display: inline-block;
+    position: relative;
+    margin: 20px;
+   padding: 0.8rem 6rem;
+    color: #03e9f4;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    overflow: hidden;
+    border: none;
+    transition: 0.5s;
+    letter-spacing: 2px;
+    background-color: rgb(45, 45, 45);
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 25px #03e9f4;
+}
+
+/* Animation */
+.btn span {
+    position: absolute;
+    display: block;
+    
+}
+
+.btn span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #03e9f4);
+   
+   
+}
+
+
+/* Add other keyframes and nth-child for other spans as in .submit-button styling */
+
+		body{
+			 background-color:lightcoral;
+		}
+        
+       
+        
+       
+    </style>
+</head>
+<body>
+    <header>
+
+        <section class="nav">
+            <!-- We can also insert any logo here     -->
+
+            <!-- We can also insert any logo here     -->
+            <div class="logo">
+                <img src="logo.jpg"><i class="fas fa-utensils"></i>Tapfood</a>
+            </div>
+
+            <!--  checkbox to control the icon's state    -->
+            <input id="menu-toggle" type="checkbox" />
+            <label class='menu-button-container' for="menu-toggle">
+                <div class='menu-button'></div>
+              </label>
+            <!--  main menu    -->
+            <ul class="menu">
+                
+                <li><a href="./index1.html">About</a></li>
+               
+                <li> <a href="./index2.html">Contact</a></li>
+               
+            </ul>
+        </section>
+    </header>
+    <section class="home" id="home ">
+       <div class="content">
+    <!-- Tagline -->
+    <h3 class="mainfont" style="font-size: 60px;">
+        The Ta<span class="yellowColor">p</span>foods
+        <br>
+        fastest f<span class="yellowColor">oo</span>d for , instant
+        <span class="yellowColor">Hunger</span>
+    </h3>
+
+    <a href="Login.jsp" class="btn">Login</a>
+    <a href="Signup.jsp" class="btn">SignUp</a>
+</div>
+
+        <!-- Hero image -->
+
+        <div class="image">
+            <img src="Chef.........png" alt=" " />
+            <div class="text-on-image">Tapfoods</div>
+        </div>
+    </section>
+    
+</body>
+</html>
